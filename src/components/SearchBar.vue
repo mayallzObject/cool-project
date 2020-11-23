@@ -1,20 +1,38 @@
 <template>
   <div class="search-bar">
     <img class="weather-icon" src="../assets/a01d.png" />
-    <select class="select-box" id="countries">
-      <option value="hi">hi</option>
-      <option value="bey">bey</option>
+    <select class="select-box" v-model="code">
+      <option v-for="country in getCountry" :key="country.id">
+        {{ country }}</option
+      >
     </select>
     <div class="search-box">
       <input class="search-city" />
-      <button class="search">S</button>
+      <button class="search">s</button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex'
+
 export default {
-  name: 'SearchBar'
+  name: 'SearchBar',
+  data() {
+    return {
+      code: 'NL'
+    }
+  },
+  created() {
+    this.$store.dispatch('fetchCountries')
+  },
+  computed: {
+    getCountry() {
+      return this.$store.getters.getCountry
+    },
+    ...mapState(['countries']),
+    ...mapGetters(['getCountry'])
+  }
 }
 </script>
 
