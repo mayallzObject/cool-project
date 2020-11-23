@@ -16,9 +16,7 @@
         :key="country.id"
       >
         {{ country }}
-
-        <img class="weather-icon" src="../assets/c02d.png"
-      /></option>
+      </option>
     </select>
     <!-- City input -->
     <div class="search-box">
@@ -31,7 +29,7 @@
       />
       <!-- Search_button / loading_icon -->
       <!-- ERROR / when res == undefined  loading stays true -->
-      <button class="search">
+      <button class="search" @click.prevent="pressSearch">
         <v-icon v-if="loading != false">fas fa-circle-notch fa-spin</v-icon>
         <v-icon v-else class="union">fas fa-search</v-icon>
       </button>
@@ -46,8 +44,8 @@ export default {
   name: 'SearchBar',
   data() {
     return {
-      code: 'NL', //country_code
-      city: '' //city_name
+      city: '', //city_name
+      code: 'NL' //country_code
     }
   },
   created() {
@@ -65,6 +63,15 @@ export default {
     // Fetch forcast by pressing enter
     enterSearch(e) {
       if (e.key == 'Enter' && this.city != '' && this.code != '') {
+        this.$store.dispatch('fetchForcast', {
+          city: this.city,
+          code: this.code
+        })
+      }
+    },
+    // Fetch forcast by pressing search_icon
+    pressSearch() {
+      if (this.c != '' && this.cc != '') {
         this.$store.dispatch('fetchForcast', {
           city: this.city,
           code: this.code
