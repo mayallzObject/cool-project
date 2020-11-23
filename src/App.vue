@@ -1,26 +1,43 @@
 <template>
   <div id="app">
-    <SearchBar />
-    <WeekForcastCard
-      v-for="day in forcast.slice(0, 7)"
+    <SearchBar v-if="!getForecastState || !getForecastState.length" />
+    <SearchBar v-else class="up" />
+    <AvrgTemperatureCard
+      v-for="avrg in forecast.slice(0, 1)"
+      :key="avrg.id"
+      :avrg="avrg"
+    />
+    <WeekForecastCard
+      v-for="day in forecast.slice(0, 7)"
       :key="day.id"
       :day="day"
     />
+    <div class="up"></div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import SearchBar from '@/components/SearchBar.vue'
-import WeekForcastCard from '@/components/WeekForcastCard.vue'
+import AvrgTemperatureCard from '@/components/AvrgTemperatureCard.vue'
+import WeekForecastCard from '@/components/WeekForecastCard.vue'
 
 export default {
   name: 'App',
   components: {
     SearchBar,
-    WeekForcastCard
+    WeekForecastCard,
+    AvrgTemperatureCard
   },
-  computed: mapState(['forcast'])
+  computed: {
+    // Average temperature getter
+    getAvrg() {
+      return this.$store.getters.getAvrg
+    },
+    ...mapState(['forecast']),
+    ...mapGetters(['getForecastState', 'getAvrg'])
+  },
+  methods: {}
 }
 </script>
 
@@ -57,5 +74,8 @@ export default {
       #fe9255 111.85%
     );
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.up {
+  top: 200px;
 }
 </style>

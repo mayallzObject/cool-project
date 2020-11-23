@@ -7,28 +7,28 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     countries: [],
-    forcast: [],
+    forecast: [],
     loading: false
   },
   mutations: {
     SET_COUNTRY(state, countries) {
       state.countries = countries
     },
-    SET_FORCAST(state, forcast) {
-      state.forcast = forcast
+    SET_FORECAST(state, forecast) {
+      state.forecast = forecast
     },
     SET_LOAD(state, loading) {
       state.loading = loading
     }
   },
   actions: {
-    fetchForcast({ commit }, { city, code }) {
+    fetchForecast({ commit }, { city, code }) {
       commit('SET_LOAD', true)
       console.log({ city, code })
       weatherApi
         .getWeather(city, code)
         .then(response => {
-          commit('SET_FORCAST', response.data.data)
+          commit('SET_FORECAST', response.data.data)
           console.log(response.data.data)
           commit('SET_LOAD', false)
         })
@@ -55,7 +55,16 @@ export default new Vuex.Store({
       return state.countries.map(f => f.flag)
     },
     getIcon: state => {
-      return state.forcast.map(ff => ff.weather.icon).slice(0, 1)
+      return state.forecast.map(ff => ff.weather.icon).slice(0, 1)
+    },
+    getForecastState: state => {
+      return state.forecast
+    },
+    getAvrg: state => {
+      return (
+        state.forecast.reduce((a, { temp }) => a + temp, 0) /
+        state.forecast.length
+      )
     }
   },
   modules: {}
