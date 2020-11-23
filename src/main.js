@@ -3,7 +3,7 @@ import App from './App.vue'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 import store from './store'
-import vuetify from './plugins/vuetify'
+import vuetify from '@/plugins/vuetify'
 
 Vue.config.productionTip = false
 

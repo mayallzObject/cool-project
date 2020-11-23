@@ -10,7 +10,7 @@ export const countryApi = axios.create({
 })
 
 export default {
-  // We use to get country_codes + country_flags
+  // Get country_codes + country_flags
   getCountries() {
     return countryApi.get(`/rest/v2/all`)
   }
