@@ -1,17 +1,26 @@
 <template>
   <div id="app">
     <SearchBar />
+    <WeekForcastCard
+      v-for="day in forcast.slice(0, 7)"
+      :key="day.id"
+      :day="day"
+    />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import SearchBar from '@/components/SearchBar.vue'
+import WeekForcastCard from '@/components/WeekForcastCard.vue'
 
 export default {
   name: 'App',
   components: {
-    SearchBar
-  }
+    SearchBar,
+    WeekForcastCard
+  },
+  computed: mapState(['forcast'])
 }
 </script>
 
