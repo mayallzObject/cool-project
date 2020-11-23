@@ -2,7 +2,7 @@
   <div class="week-card">
     <div class="day-name">{{ timestamp }}</div>
     <div class="day-temp">
-      {{ parseInt(day.temp) + '°c' }}
+      {{ Math.round(day.temp) + '°c' }}
     </div>
   </div>
 </template>
@@ -18,14 +18,14 @@ export default {
   },
   data() {
     return {
-      timestamp: ''
+      timestamp: '' // week_day_string
     }
   },
   created() {
-    setInterval(this.getNow, 100)
+    setInterval(this.getDay, 100)
   },
   methods: {
-    getNow: function() {
+    getDay: function() {
       const options = { weekday: 'long', timeZone: 'Europe/Amsterdam' }
       const today = new Date(this.day.datetime)
       const date = today.toLocaleString('default', options)
@@ -38,26 +38,25 @@ export default {
 <style scoped>
 .week-card {
   position: relative;
-  width: 52px;
-  height: 50px;
-  margin-right: 25px;
-  margin-left: 25px;
+  width: 62px;
+  height: 60px;
+  margin-left: 20px;
+  margin-right: 10px;
   top: 150px;
   display: block;
-  justify-content: center;
 }
 .day-name {
-  position: relative;
   width: 58px;
   height: 30px;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
   line-height: 24px;
   /* identical to box height, or 200% */
+
   letter-spacing: 0.06em;
-  display: flex;
+
   color: #08153e;
 
   opacity: 0.6;
@@ -74,6 +73,10 @@ export default {
   /* identical to box height, or 133% */
   /* display: flex; */
   color: #ffffff;
-  display: flex;
+  justify-self: right;
+  align-items: right;
+  text-align: right;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 </style>

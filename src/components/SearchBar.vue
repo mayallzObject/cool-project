@@ -56,14 +56,14 @@ export default {
     getCountry() {
       return this.$store.getters.getCountry
     },
-    ...mapState(['countries', 'loading', 'forcast']),
+    ...mapState(['loading', 'forecast']),
     ...mapGetters(['getCountry', 'getIcon'])
   },
   methods: {
     // Fetch forcast by pressing enter
     enterSearch(e) {
       if (e.key == 'Enter' && this.city != '' && this.code != '') {
-        this.$store.dispatch('fetchForcast', {
+        this.$store.dispatch('fetchForecast', {
           city: this.city,
           code: this.code
         })
@@ -72,7 +72,7 @@ export default {
     // Fetch forcast by pressing search_icon
     pressSearch() {
       if (this.c != '' && this.cc != '') {
-        this.$store.dispatch('fetchForcast', {
+        this.$store.dispatch('fetchForecast', {
           city: this.city,
           code: this.code
         })
