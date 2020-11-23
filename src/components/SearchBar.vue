@@ -7,7 +7,13 @@
       >
     </select>
     <div class="search-box">
-      <input class="search-city" />
+      <input
+        class="search-city"
+        type="text"
+        placeholder="Please eneter your location..."
+        v-model="city"
+        @keypress="enterSearch"
+      />
       <button class="search">s</button>
     </div>
   </div>
@@ -20,7 +26,8 @@ export default {
   name: 'SearchBar',
   data() {
     return {
-      code: 'NL'
+      code: 'NL',
+      city: ''
     }
   },
   created() {
@@ -32,6 +39,16 @@ export default {
     },
     ...mapState(['countries']),
     ...mapGetters(['getCountry'])
+  },
+  methods: {
+    enterSearch(e) {
+      if (e.key == 'Enter' && this.city != '' && this.code != '') {
+        this.$store.dispatch('fetchForcast', {
+          city: this.city,
+          code: this.code
+        })
+      }
+    }
   }
 }
 </script>
