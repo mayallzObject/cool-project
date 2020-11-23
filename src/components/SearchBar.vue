@@ -27,8 +27,7 @@
         v-model="city"
         @keypress="enterSearch"
       />
-      <!-- Search_button / loading_icon -->
-      <!-- ERROR / when res == undefined  loading stays true -->
+      <!-- Search_button / Loading_icon -->
       <button class="search" @click.prevent="pressSearch">
         <v-icon v-if="loading != false">fas fa-circle-notch fa-spin</v-icon>
         <v-icon v-else class="union">fas fa-search</v-icon>
@@ -49,10 +48,11 @@ export default {
     }
   },
   created() {
+    // Get countries for select
     this.$store.dispatch('fetchCountries')
   },
   computed: {
-    // Get country_code
+    // Country_code
     getCountry() {
       return this.$store.getters.getCountry
     },
@@ -84,8 +84,10 @@ export default {
 
 <style scoped>
 .search-bar {
-  position: absolute;
-  width: 632px;
+  position: fixed;
+  display: flex;
+  max-width: 632px;
+  width: 100%;
   height: 92px;
   background: linear-gradient(
       0deg,
@@ -97,14 +99,11 @@ export default {
   border-radius: 16px;
 }
 .select-box {
-  position: absolute;
+  position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
   max-width: 95px;
-  height: 48px;
   width: 100%;
+  height: 48px;
   top: 22px;
   left: 82px;
   border: 1px solid rgba(8, 21, 62, 0.05);

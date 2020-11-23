@@ -1,5 +1,28 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    :class="
+      getAvrg > -41 && getAvrg < -30 // I am setting the max-minumum temp to 50 degrees celsius
+        ? 'minus-fourty'
+        : getAvrg >= -30 && getAvrg < -20
+        ? 'minus-thirty'
+        : getAvrg >= -20 && getAvrg < -10
+        ? 'minus-twenty'
+        : getAvrg >= -10 && getAvrg < 0
+        ? 'minus-ten'
+        : getAvrg == 0
+        ? 'zero'
+        : getAvrg > 0 && getAvrg <= 10
+        ? 'ten'
+        : getAvrg > 10 && getAvrg <= 20
+        ? 'twenty'
+        : getAvrg > 20 && getAvrg <= 30
+        ? 'thirty'
+        : getAvrg > 30 && getAvrg <= 41
+        ? 'fourty'
+        : ''
+    "
+  >
     <SearchBar v-if="!getForecastState || !getForecastState.length" />
     <SearchBar v-else class="up" />
     <AvrgTemperatureCard
@@ -29,51 +52,98 @@ export default {
     WeekForecastCard,
     AvrgTemperatureCard
   },
+  // Test backgroud class binding
+  // provide a value for tempreture average between -40 and 40
+  // data() {
+  //   return {
+  //     getAvrg: 0
+  //   }
+  // },
   computed: {
     // Average temperature getter
     getAvrg() {
-      return this.$store.getters.getAvrg
+      return Math.round(this.$store.getters.getAvrg)
     },
     ...mapState(['forecast']),
-    ...mapGetters(['getForecastState', 'getAvrg'])
+    ...mapGetters(['getForecastState'])
   },
   methods: {}
 }
 </script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-#app {
-  display: flex;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+/* app.css global styles can be found in "@/assets/global-styles-css/app.css" */
+#app.minus-fourty {
   background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
-    linear-gradient(
-      119.25deg,
-      #102f7e -11.47%,
-      #0c8dd6 3.95%,
-      #1aa0ec 19.37%,
-      #60c6ff 34.78%,
-      #9bdbff 50.19%,
-      #b4deda 65.61%,
-      #ffd66b 81.02%,
-      #ffc178 96.44%,
-      #fe9255 111.85%
-    );
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    130.54deg,
+    /* -40 */ #102f7e 0%,
+    #0c8dd6 85%,
+    #1aa0ec 170%
+  );
+}
+#app.minus-thirty {
+  background: linear-gradient(
+    130.54deg,
+    /* -30 */ #102f7e -33%,
+    #0c8dd6 52%,
+    #1aa0ec 137%
+  );
+}
+#app.minus-twenty {
+  background: linear-gradient(
+    130.54deg,
+    /* -20 */ #0c8dd6 -33%,
+    #1aa0ec 52%,
+    #60c6ff 137%
+  );
+}
+#app.minus-ten {
+  background: linear-gradient(
+    130.54deg,
+    /* -10*/ #1aa0ec -33%,
+    #60c6ff 52%,
+    #9bdbff 137%
+  );
+}
+#app.zero {
+  background: linear-gradient(
+    130.54deg,
+    /* 0*/ #60c6ff -33%,
+    #9bdbff 52%,
+    #b4deda 137%
+  );
+}
+#app.ten {
+  background: linear-gradient(
+    130.54deg,
+    /* 10*/ #9bdbff -33%,
+    #b4deda 52%,
+    #ffd66b 137%
+  );
+}
+#app.twenty {
+  background: linear-gradient(
+    130.54deg,
+    /* 20*/ #b4deda -33%,
+    #ffd66b 52%,
+    #ffc178 137%
+  );
+}
+#app.thirty {
+  background: linear-gradient(
+    130.54deg,
+    /* 30 */ #ffd66b -33%,
+    #ffc178 52%,
+    #fe9255 137%
+  );
+}
+#app.fourty {
+  background: linear-gradient(
+    130.54deg,
+    /* 40 */ #ffd66b -66%,
+    #ffc178 19%,
+    #fe9255 104%
+  );
 }
 .up {
   top: 200px;

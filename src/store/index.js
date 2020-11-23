@@ -23,14 +23,19 @@ export default new Vuex.Store({
   },
   actions: {
     fetchForecast({ commit }, { city, code }) {
-      commit('SET_LOAD', true)
       console.log({ city, code })
+      commit('SET_LOAD', true)
       weatherApi
         .getWeather(city, code)
         .then(response => {
-          commit('SET_FORECAST', response.data.data)
-          console.log(response.data.data)
-          commit('SET_LOAD', false)
+          if (!response.data.data) {
+            commit('SET_LOAD', false)
+          } else {
+            commit('SET_LOAD', true)
+            commit('SET_FORECAST', response.data.data)
+            console.log(response.data.data)
+            commit('SET_LOAD', false)
+          }
         })
         .catch(error => {
           console.log('There was an error:', error.response)
