@@ -56,11 +56,8 @@ export default {
   font-size: 13px;
   line-height: 24px;
   /* identical to box height, or 200% */
-  text-align: center;
-  align-items: center;
   letter-spacing: 0.06em;
   display: flex;
-  justify-content: center;
   color: #08153e;
 
   opacity: 0.6;
