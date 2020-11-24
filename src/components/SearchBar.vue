@@ -8,7 +8,6 @@
     <div v-else>
       <img class="weather-icon" :src="require(`@/assets/${getIcon}.png`)" />
     </div>
-    <!-- Country / country_code selector / not working with the flags :(-->
     <select class="select-box" v-model="code">
       <option
         class="country-code"
@@ -27,7 +26,6 @@
         v-model="city"
         @keypress="enterSearch"
       />
-      <!-- Search_button / Loading_icon -->
       <button class="search" @click.prevent="pressSearch">
         <!-- Set loading_icon -->
         <v-icon v-if="loading != false && city != ''">
@@ -102,6 +100,7 @@ export default {
   border-radius: 16px;
 }
 .select-box {
+  display: flex;
   margin-right: 8px;
   width: 95px;
   height: 48px;
@@ -182,10 +181,11 @@ export default {
   transition: all 0.2s linear;
 }
 .search:hover {
+  opacity: 0.5;
   background-color: transparent;
   resize: none;
   outline: none;
-  transform: scale(1.07);
+  transform: scale(1.11);
 }
 .search:focus {
   background-color: transparent;

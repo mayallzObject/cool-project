@@ -40,17 +40,24 @@ export default {
 
 <style scoped>
 .week-card {
-  position: relative;
+  margin-top: 48px;
+  max-width: 642px;
+  height: 52px;
+  display: flex;
+}
+.day-box {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
-.day-box {
   width: 129px;
   height: 59px;
 }
 .day-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   width: 120px;
   height: 25px;
   font-style: normal;
@@ -60,12 +67,12 @@ export default {
   letter-spacing: 0.05em;
   color: #08153e;
   opacity: 0.6;
-  position: relative;
+}
+.day-temp {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.day-temp {
+  flex-wrap: wrap;
   width: 110px;
   height: 32px;
   /* font-family: 'Poppins', sans-serif; */
@@ -74,9 +81,6 @@ export default {
   font-weight: 600;
   line-height: 32px;
   color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-shadow: 0px 2px 10px rgba(8, 21, 62, 0.15);
 }
 
