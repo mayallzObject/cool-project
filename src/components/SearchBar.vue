@@ -4,6 +4,7 @@
     <div v-if="!getIcon || !getIcon.length">
       <img class="weather-icon" src="../assets/c02d.png" />
     </div>
+
     <!-- Else require the correct icon -->
     <div v-else>
       <img class="weather-icon" :src="require(`@/assets/${getIcon}.png`)" />
@@ -17,6 +18,7 @@
         {{ country }}
       </option>
     </select>
+
     <!-- City input -->
     <div class="search-box">
       <input
@@ -26,6 +28,7 @@
         v-model="city"
         @keypress="enterSearch"
       />
+
       <button class="search" @click.prevent="pressSearch">
         <!-- Set loading_icon -->
         <v-icon v-if="loading != false && city != ''">
