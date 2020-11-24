@@ -16,7 +16,6 @@
         :key="country.id"
       >
         {{ country }}
-        <img class="weather-icon" src="../assets/c02d.png" size="small" />
       </option>
     </select>
     <!-- City input -->
@@ -111,7 +110,16 @@ export default {
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
   background: #ffffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Positions background arrow image */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  background-position: 75px center;
 }
+
 .select-box:hover {
   border: 1px solid #b5c7ff;
 }
@@ -184,13 +192,17 @@ export default {
   height: 24px;
   top: 12px;
   left: 382px;
+  transition: all 0.2s linear;
 }
 .search:hover {
-  border: 10px solid #b5c7ff;
-  border-radius: 150px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  transform: scale(1.07);
+}
+.search:focus {
   background-color: transparent;
   resize: none;
   outline: none;
 }
 </style>
-border: 1px solid #08153E 5%

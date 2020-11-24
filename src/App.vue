@@ -26,6 +26,7 @@
   >
     <SearchBar v-if="!getForecastState || !getForecastState.length" />
     <SearchBar v-else class="up" />
+
     <AvrgTemperatureCard
       v-for="avrg in forecast.slice(0, 1)"
       :key="avrg.id"
@@ -36,7 +37,6 @@
       :key="day.id"
       :day="day"
     />
-    <div class="up"></div>
   </div>
 </template>
 
@@ -53,13 +53,6 @@ export default {
     WeekForecastCard,
     AvrgTemperatureCard
   },
-  // Test backgroud class binding
-  // provide a value for temperature average between -40 and 40
-  //data() {
-  //   return {
-  //     getAvrg: 0
-  //   }
-  // },
   computed: {
     // Average temperature getter
     getAvrg() {

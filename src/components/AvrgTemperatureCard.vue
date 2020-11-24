@@ -64,7 +64,6 @@ export default {
 }
 .header {
   height: 24px;
-  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
@@ -74,7 +73,6 @@ export default {
   opacity: 0.6;
 }
 .avrg-temperature {
-  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 120px;

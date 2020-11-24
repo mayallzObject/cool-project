@@ -54,7 +54,6 @@ export default {
 .day-name {
   width: 120px;
   height: 25px;
-  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;

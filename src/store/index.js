@@ -34,7 +34,6 @@ export default new Vuex.Store({
           } else {
             commit('SET_LOAD', true)
             commit('SET_FORECAST', response.data.data)
-            console.log(response.data.data)
             commit('SET_LOAD', false)
           }
         })
@@ -54,6 +53,10 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    // Get forcast
+    getForecastState: state => {
+      return state.forecast
+    },
     // Get country_code
     getCountry: state => {
       return state.countries.map(c => c.alpha2Code)
@@ -65,10 +68,6 @@ export default new Vuex.Store({
     // Get weather_icon_code
     getIcon: state => {
       return state.forecast.map(ff => ff.weather.icon).slice(0, 1)
-    },
-    // Get forcast
-    getForecastState: state => {
-      return state.forecast
     },
     // Get temperature average for x number of days
     getAvrg: state => {
