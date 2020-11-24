@@ -1,18 +1,44 @@
 <template>
-  <div id="app">
-    <SearchBar v-if="!getForecastState || !getForecastState.length" />
-    <SearchBar v-else class="up" />
-    <AvrgTemperatureCard
-      v-for="avrg in forecast.slice(0, 1)"
-      :key="avrg.id"
-      :avrg="avrg"
-    />
-    <WeekForecastCard
-      v-for="day in forecast.slice(0, 7)"
-      :key="day.id"
-      :day="day"
-    />
-    <div class="up"></div>
+  <!-- Change background according to temperature ranges -->
+  <div
+    id="app"
+    :class="
+      getAvrg > -41 && getAvrg < -30
+        ? 'minus-fourty'
+        : getAvrg >= -30 && getAvrg < -20
+        ? 'minus-thirty'
+        : getAvrg >= -20 && getAvrg < -10
+        ? 'minus-twenty'
+        : getAvrg >= -10 && getAvrg < 0
+        ? 'minus-ten'
+        : getAvrg == 0
+        ? 'zero'
+        : getAvrg > 0 && getAvrg <= 10
+        ? 'ten'
+        : getAvrg > 10 && getAvrg <= 20
+        ? 'twenty'
+        : getAvrg > 20 && getAvrg <= 30
+        ? 'thirty'
+        : getAvrg > 30 && getAvrg <= 41
+        ? 'fourty'
+        : ''
+    "
+  >
+    <div class="container">
+      <SearchBar />
+      <AvrgTemperatureCard
+        v-for="avrg in forecast.slice(0, 1)"
+        :key="avrg.id"
+        :avrg="avrg"
+      />
+      <div class="week-container">
+        <WeekForecastCard
+          v-for="day in forecast.slice(0, 7)"
+          :key="day.id"
+          :day="day"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -32,50 +58,11 @@ export default {
   computed: {
     // Average temperature getter
     getAvrg() {
-      return this.$store.getters.getAvrg
+      return Math.round(this.$store.getters.getAvrg)
     },
     ...mapState(['forecast']),
-    ...mapGetters(['getForecastState', 'getAvrg'])
+    ...mapGetters(['getForecastState'])
   },
   methods: {}
 }
 </script>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-#app {
-  display: flex;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
-    linear-gradient(
-      119.25deg,
-      #102f7e -11.47%,
-      #0c8dd6 3.95%,
-      #1aa0ec 19.37%,
-      #60c6ff 34.78%,
-      #9bdbff 50.19%,
-      #b4deda 65.61%,
-      #ffd66b 81.02%,
-      #ffc178 96.44%,
-      #fe9255 111.85%
-    );
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.up {
-  top: 200px;
-}
-</style>
