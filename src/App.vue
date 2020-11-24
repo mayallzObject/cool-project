@@ -24,19 +24,21 @@
         : ''
     "
   >
-    <SearchBar v-if="!getForecastState || !getForecastState.length" />
-    <SearchBar v-else class="up" />
+    <div class="container">
+      <SearchBar v-if="!getForecastState || !getForecastState.length" />
+      <SearchBar v-else class="up" />
 
-    <AvrgTemperatureCard
-      v-for="avrg in forecast.slice(0, 1)"
-      :key="avrg.id"
-      :avrg="avrg"
-    />
-    <WeekForecastCard
-      v-for="day in forecast.slice(0, 7)"
-      :key="day.id"
-      :day="day"
-    />
+      <AvrgTemperatureCard
+        v-for="avrg in forecast.slice(0, 1)"
+        :key="avrg.id"
+        :avrg="avrg"
+      />
+      <WeekForecastCard
+        v-for="day in forecast.slice(0, 7)"
+        :key="day.id"
+        :day="day"
+      />
+    </div>
   </div>
 </template>
 
@@ -66,6 +68,12 @@ export default {
 </script>
 
 <style>
+.container {
+  display: inline-flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
 /* app.css global styles can be found in "@/assets/global-styles-css/app.css" */
 #app.minus-fourty {
   background: linear-gradient(

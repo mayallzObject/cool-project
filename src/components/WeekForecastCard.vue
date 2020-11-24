@@ -40,7 +40,6 @@ export default {
 
 <style scoped>
 .week-card {
-  margin-top: 350px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -75,7 +74,6 @@ export default {
   font-weight: 600;
   line-height: 32px;
   color: #ffffff;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

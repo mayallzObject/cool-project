@@ -54,7 +54,6 @@ export default {
 
 <style scoped>
 .avrg-card {
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;

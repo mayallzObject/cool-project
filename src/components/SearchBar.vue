@@ -87,7 +87,7 @@ export default {
 
 <style scoped>
 .search-bar {
-  position: absolute;
+  align-items: center;
   display: flex;
   max-width: 632px;
   width: 100%;
@@ -102,11 +102,9 @@ export default {
   border-radius: 16px;
 }
 .select-box {
-  position: absolute;
+  margin-right: 8px;
   width: 95px;
   height: 48px;
-  top: 22px;
-  left: 87px;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
   background: #ffffff;
@@ -130,20 +128,18 @@ export default {
   outline: none;
 }
 .weather-icon {
-  position: absolute;
   height: 48px;
   width: 48px;
-  top: 22px;
-  left: 22px;
+  margin-left: 22px;
+  margin-right: 14px;
 }
 .search-box {
-  position: absolute;
+  align-items: center;
+  margin-left: 8;
+  display: flex;
   max-width: 425px;
-  /* font-family: Poppins; */
   width: 100%;
   height: 48px;
-  top: 22px;
-  left: 185px;
   background: #ffffff;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
@@ -155,21 +151,14 @@ export default {
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
-  /* display: block; */
-  align-items: center;
-  flex-flow: row;
-
   color: #08153e;
 }
 .search-city {
-  position: absolute;
+  margin-left: 17px;
   max-width: 299px;
   width: 100%;
   height: 30px;
-  left: 17px;
-  top: 9px;
   border: none;
-  font-family: Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -187,11 +176,9 @@ export default {
   outline: none;
 }
 .search {
-  position: absolute;
+  margin-left: 70px;
   width: 24px;
   height: 24px;
-  top: 12px;
-  left: 382px;
   transition: all 0.2s linear;
 }
 .search:hover {
