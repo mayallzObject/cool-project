@@ -1,8 +1,9 @@
 <template>
+  <!-- Change background according to temperature ranges -->
   <div
     id="app"
     :class="
-      getAvrg > -41 && getAvrg < -30 // I am setting the max-minumum temp to 50 degrees celsius
+      getAvrg > -41 && getAvrg < -30
         ? 'minus-fourty'
         : getAvrg >= -30 && getAvrg < -20
         ? 'minus-thirty'
@@ -53,8 +54,8 @@ export default {
     AvrgTemperatureCard
   },
   // Test backgroud class binding
-  // provide a value for tempreture average between -40 and 40
-  // data() {
+  // provide a value for temperature average between -40 and 40
+  //data() {
   //   return {
   //     getAvrg: 0
   //   }
@@ -84,7 +85,7 @@ export default {
 #app.minus-thirty {
   background: linear-gradient(
     130.54deg,
-    /* -30 */ #102f7e -33%,
+    /* -30°c */ #102f7e -33%,
     #0c8dd6 52%,
     #1aa0ec 137%
   );
@@ -92,7 +93,7 @@ export default {
 #app.minus-twenty {
   background: linear-gradient(
     130.54deg,
-    /* -20 */ #0c8dd6 -33%,
+    /* -20°c */ #0c8dd6 -33%,
     #1aa0ec 52%,
     #60c6ff 137%
   );
@@ -100,7 +101,7 @@ export default {
 #app.minus-ten {
   background: linear-gradient(
     130.54deg,
-    /* -10*/ #1aa0ec -33%,
+    /* -10°c */ #1aa0ec -33%,
     #60c6ff 52%,
     #9bdbff 137%
   );
@@ -108,7 +109,7 @@ export default {
 #app.zero {
   background: linear-gradient(
     130.54deg,
-    /* 0*/ #60c6ff -33%,
+    /* 0°c */ #60c6ff -33%,
     #9bdbff 52%,
     #b4deda 137%
   );
@@ -116,15 +117,16 @@ export default {
 #app.ten {
   background: linear-gradient(
     130.54deg,
-    /* 10*/ #9bdbff -33%,
+    /* 10°c */ #9bdbff -33%,
     #b4deda 52%,
     #ffd66b 137%
   );
 }
+/* This range can be improved */
 #app.twenty {
   background: linear-gradient(
     130.54deg,
-    /* 20*/ #b4deda -33%,
+    /* 20°c */ #b4deda -33%,
     #ffd66b 52%,
     #ffc178 137%
   );
@@ -132,7 +134,7 @@ export default {
 #app.thirty {
   background: linear-gradient(
     130.54deg,
-    /* 30 */ #ffd66b -33%,
+    /* 30°c */ #ffd66b -33%,
     #ffc178 52%,
     #fe9255 137%
   );
@@ -140,12 +142,12 @@ export default {
 #app.fourty {
   background: linear-gradient(
     130.54deg,
-    /* 40 */ #ffd66b -66%,
+    /* 40°c */ #ffd66b -66%,
     #ffc178 19%,
     #fe9255 104%
   );
 }
 .up {
-  top: 200px;
+  top: 20%;
 }
 </style>

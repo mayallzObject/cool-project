@@ -16,6 +16,7 @@
         :key="country.id"
       >
         {{ country }}
+        <img class="weather-icon" src="../assets/c02d.png" size="small" />
       </option>
     </select>
     <!-- City input -->
@@ -29,7 +30,10 @@
       />
       <!-- Search_button / Loading_icon -->
       <button class="search" @click.prevent="pressSearch">
-        <v-icon v-if="loading != false">fas fa-circle-notch fa-spin</v-icon>
+        <!-- Set loading_icon -->
+        <v-icon v-if="loading != false && city != ''">
+          fas fa-circle-notch fa-spin
+        </v-icon>
         <v-icon v-else class="union">fas fa-search</v-icon>
       </button>
     </div>
@@ -84,7 +88,7 @@ export default {
 
 <style scoped>
 .search-bar {
-  position: fixed;
+  position: absolute;
   display: flex;
   max-width: 632px;
   width: 100%;
@@ -99,16 +103,23 @@ export default {
   border-radius: 16px;
 }
 .select-box {
-  position: relative;
-  display: flex;
-  max-width: 95px;
-  width: 100%;
+  position: absolute;
+  width: 95px;
   height: 48px;
   top: 22px;
-  left: 82px;
+  left: 87px;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
   background: #ffffff;
+}
+.select-box:hover {
+  border: 1px solid #b5c7ff;
+}
+.select-box:focus {
+  border: 2px solid #b5c7ff;
+  background-color: transparent;
+  resize: none;
+  outline: none;
 }
 .weather-icon {
   position: absolute;
@@ -120,7 +131,7 @@ export default {
 .search-box {
   position: absolute;
   max-width: 425px;
-  font-family: Poppins;
+  /* font-family: Poppins; */
   width: 100%;
   height: 48px;
   top: 22px;
@@ -132,13 +143,14 @@ export default {
 .country-code {
   width: 17px;
   height: 30px;
-  padding-left: 20px;
-  font-family: Poppins;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
-  display: flex;
+  /* display: block; */
+  align-items: center;
+  flex-flow: row;
+
   color: #08153e;
 }
 .search-city {
@@ -158,7 +170,13 @@ export default {
   opacity: 0.5;
 }
 .search-city:hover {
-  background-color: #b5c7ff;
+  border: 1px solid #b5c7ff;
+}
+.search-city:focus {
+  border: 2px solid #b5c7ff;
+  background-color: transparent;
+  resize: none;
+  outline: none;
 }
 .search {
   position: absolute;
@@ -167,4 +185,12 @@ export default {
   top: 12px;
   left: 382px;
 }
+.search:hover {
+  border: 10px solid #b5c7ff;
+  border-radius: 150px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
 </style>
+border: 1px solid #08153E 5%

@@ -1,8 +1,10 @@
 <template>
   <div class="week-card">
-    <div class="day-name">{{ timestamp }}</div>
-    <div class="day-temp">
-      {{ Math.round(day.temp) + '°c' }}
+    <div class="day-box">
+      <div class="day-name">{{ timestamp }}</div>
+      <div class="day-temp">
+        {{ Math.round(day.temp) + '°c' }}
+      </div>
     </div>
   </div>
 </template>
@@ -18,14 +20,15 @@ export default {
   },
   data() {
     return {
-      timestamp: '' // week_day_string
+      timestamp: '' // week_days_by_name
     }
   },
   created() {
-    setInterval(this.getDay, 100)
+    setInterval(this.getDays, 100)
   },
   methods: {
-    getDay: function() {
+    // Get week_days by name
+    getDays: function() {
       const options = { weekday: 'long', timeZone: 'Europe/Amsterdam' }
       const today = new Date(this.day.datetime)
       const date = today.toLocaleString('default', options)
@@ -37,45 +40,47 @@ export default {
 
 <style scoped>
 .week-card {
+  margin-top: 350px;
   position: relative;
-  width: 62px;
-  height: 60px;
-  margin-left: 20px;
-  margin-right: 10px;
-  top: 150px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.day-box {
+  width: 129px;
+  height: 59px;
 }
 .day-name {
-  width: 58px;
-  height: 30px;
+  width: 120px;
+  height: 25px;
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 13px;
-  line-height: 24px;
+  font-size: 14px;
   /* identical to box height, or 200% */
-
-  letter-spacing: 0.06em;
-
+  letter-spacing: 0.05em;
   color: #08153e;
-
   opacity: 0.6;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .day-temp {
-  position: absolute;
-  width: 24px;
+  width: 110px;
   height: 32px;
-  font-family: Poppins;
+  /* font-family: 'Poppins', sans-serif; */
   font-style: normal;
   font-size: 26px;
   font-weight: 600;
   line-height: 32px;
-  /* identical to box height, or 133% */
-  /* display: flex; */
   color: #ffffff;
-  justify-self: right;
-  align-items: right;
-  text-align: right;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 2px 10px rgba(8, 21, 62, 0.15);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');

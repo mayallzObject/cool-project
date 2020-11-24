@@ -34,6 +34,7 @@ export default {
     ...mapGetters(['getAvrg'])
   },
   methods: {
+    // Get month, dates and year
     getPeriod: function() {
       const options = { month: 'long', timeZone: 'Europe/Amsterdam' }
       const today = new Date(this.avrg.datetime)
@@ -54,40 +55,32 @@ export default {
 <style scoped>
 .avrg-card {
   position: absolute;
-  display: block;
+  display: flex;
   justify-content: center;
-  width: 147px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 247px;
   height: 171px;
 }
 .header {
-  width: 180px;
   height: 24px;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 13px;
   line-height: 24px;
   /* identical to box height, or 200% */
-  align-items: center;
-  letter-spacing: 0.07em;
-
+  letter-spacing: 0.06em;
   color: #08153e;
-
   opacity: 0.6;
 }
 .avrg-temperature {
-  position: absolute;
-  width: 116px;
-  height: 120px;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 120px;
   line-height: 120px;
   /* identical to box height, or 100% */
-  display: flex;
-  align-items: center;
-
+  text-shadow: 0px 2px 10px rgba(8, 21, 62, 0.15);
   color: #ffffff;
 }
 </style>
