@@ -11,7 +11,7 @@ export const weatherApi = axios.create({
 })
 
 export default {
-  // Weaherforecast for 10 days
+  // Weatherforecast for 10 days
   getWeather(city, code) {
     return weatherApi.get(
       `/forecast/daily?city=${city}&country=${code}&key=${API_KEY}&days=10`
