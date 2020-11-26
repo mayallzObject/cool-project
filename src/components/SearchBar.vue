@@ -24,7 +24,7 @@
       <input
         class="search-city"
         type="text"
-        placeholder="Please eneter your location..."
+        placeholder="Please enter your location..."
         v-model="city"
         @keypress="enterSearch"
       />
@@ -64,7 +64,7 @@ export default {
     ...mapGetters(['getCountry', 'getIcon'])
   },
   methods: {
-    // Fetch forcast by pressing enter
+    // Fetch forecast by pressing enter
     enterSearch(e) {
       if (e.key == 'Enter' && this.city != '' && this.code != '') {
         this.$store.dispatch('fetchForecast', {
@@ -73,7 +73,7 @@ export default {
         })
       }
     },
-    // Fetch forcast by pressing search_icon
+    // Fetch forecast by pressing search_icon
     pressSearch() {
       if (this.c != '' && this.cc != '') {
         this.$store.dispatch('fetchForecast', {
@@ -104,7 +104,6 @@ export default {
 }
 .select-box {
   display: flex;
-  margin-right: 8px;
   width: 95px;
   height: 48px;
   border: 1px solid rgba(8, 21, 62, 0.05);
@@ -137,7 +136,7 @@ export default {
 }
 .search-box {
   align-items: center;
-  margin-left: 8;
+  margin-left: 8px;
   display: flex;
   max-width: 425px;
   width: 100%;

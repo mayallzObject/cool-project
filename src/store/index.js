@@ -53,7 +53,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    // Get forcast
+    // Get forecast
     getForecastState: state => {
       return state.forecast
     },
