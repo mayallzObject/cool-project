@@ -2,12 +2,16 @@
   <div class="search-bar">
     <!-- If getIcon is undefined, show default icon -->
     <div v-if="!getIcon || !getIcon.length">
-      <img class="weather-icon" src="../assets/c02d.png" />
+      <img class="weather-icon" src="../assets/c02d.png" alt="static-img" />
     </div>
 
     <!-- Else require the correct icon -->
     <div v-else>
-      <img class="weather-icon" :src="require(`@/assets/${getIcon}.png`)" />
+      <img
+        class="weather-icon"
+        :src="require(`@/assets/${getIcon}.png`)"
+        alt="dynamic-img"
+      />
     </div>
     <select class="select-box" v-model="code">
       <option
@@ -29,7 +33,7 @@
         @keypress="enterSearch"
       />
 
-      <button class="search" @click.prevent="pressSearch">
+      <button aria-label="search" class="search" @click.prevent="pressSearch">
         <!-- Set loading_icon -->
         <v-icon v-if="loading != false && city != ''">
           fas fa-circle-notch fa-spin
@@ -129,8 +133,8 @@ export default {
   outline: none;
 }
 .weather-icon {
-  height: 48px;
-  width: 48px;
+  height: 40px;
+  width: 40px;
   margin-left: 22px;
   margin-right: 14px;
 }

@@ -4,7 +4,6 @@ import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 import store from './store'
 import vuetify from '@/plugins/vuetify'
-import './App.css'
 
 Vue.config.productionTip = false
 
