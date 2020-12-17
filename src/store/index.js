@@ -69,6 +69,9 @@ export default new Vuex.Store({
     getIcon: state => {
       return state.forecast.map(ff => ff.weather.icon).slice(0, 1)
     },
+    getIcons: state => {
+      return state.forecast.map(ff => ff.weather.icon)
+    },
     // Get temperature average for x number of days
     getAvrg: state => {
       return (
