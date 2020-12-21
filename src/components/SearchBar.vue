@@ -94,7 +94,7 @@ export default {
 .search-bar {
   align-items: center;
   display: flex;
-  max-width: 62rem;
+  max-width: 52rem;
   margin-bottom: 5rem;
   width: 100%;
   height: 10rem;
@@ -157,11 +157,11 @@ export default {
 }
 .country-code {
   align-items: center;
-  height: 1rem;
+
   font-style: normal;
   font-weight: normal;
-  font-size: 1.2rem;
-  line-height: 1.3rem;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
   letter-spacing: 0.1rem;
   color: #08153e;
 }
