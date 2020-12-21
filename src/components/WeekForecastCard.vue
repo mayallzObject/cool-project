@@ -1,12 +1,12 @@
 <template>
   <div class="week-card">
     <div class="day-box">
+      <div class="day-name">{{ timestamp }}</div>
       <img
         class="weather-icon"
         :src="require(`@/assets/${day.weather.icon}.png`)"
         alt="dynamic-img"
       />
-      <div class="day-name">{{ timestamp }}</div>
       <div class="day-temp">
         {{ Math.round(day.temp) + '°c' }}
       </div>
