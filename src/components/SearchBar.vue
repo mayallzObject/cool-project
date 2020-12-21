@@ -146,9 +146,9 @@ export default {
 .search-box {
   align-items: center;
   margin-left: 1rem;
-  margin-right: 3rem;
+  margin-right: 2rem;
   display: flex;
-
+  max-width: 40rem;
   width: 100%;
   height: 5rem;
   background: #ffffff;
@@ -166,9 +166,9 @@ export default {
   color: #08153e;
 }
 .search-city {
-  margin-left: 1rem;
+  margin: 0 1rem 0 1rem;
 
-  max-width: 33rem;
+  max-width: 28rem;
   width: 100%;
   height: 3rem;
   border: none;
@@ -190,11 +190,7 @@ export default {
   outline: none;
 }
 .search {
-  align-items: center;
-  display: flex;
-  height: 4rem;
-  width: 4rem;
-  margin-left: 0 3.5rem 0 1rem;
+  margin: 0 1rem 0 2rem;
   transition: all 0.2s linear;
 }
 .search:hover {

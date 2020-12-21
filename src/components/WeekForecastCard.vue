@@ -117,7 +117,7 @@ export default {
   margin-bottom: 1rem;
   /* font-family: 'Poppins', sans-serif; */
   font-style: normal;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
   line-height: 1.4rem;
   color: #ffffff;
