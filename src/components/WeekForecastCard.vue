@@ -7,11 +7,10 @@
         alt="dynamic-img"
       />
       <div class="day-name">{{ timestamp }}</div>
+      <div class="day-date">{{ day.datetime }}</div>
       <div class="day-temp">
         {{ Math.round(day.temp) + '°c' }}
       </div>
-      <div class="day-date">{{ day.datetime }}</div>
-      <div class="day-temp"></div>
     </div>
   </div>
 </template>
@@ -61,14 +60,13 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 6rem;
-  width: 6rem;
+  height: 6.5rem;
+  width: 6.5rem;
 }
 
 .week-card {
-  max-width: 55rem;
   display: flex;
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 .day-box {
   display: flex;
@@ -76,8 +74,8 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 7rem;
-  height: 9rem;
+  width: 10rem;
+  height: 15rem;
 }
 .day-name {
   display: flex;
@@ -100,10 +98,10 @@ export default {
   align-items: center;
   flex-wrap: wrap;
   width: 12rem;
-
+  margin-bottom: 1rem;
   font-style: normal;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 1rem;
   /* identical to box height, or 200% */
   letter-spacing: 0.05em;
   color: #08153e;
@@ -114,11 +112,11 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 10rem;
 
+  margin-bottom: 1rem;
   /* font-family: 'Poppins', sans-serif; */
   font-style: normal;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 600;
   line-height: 1.4rem;
   color: #ffffff;
