@@ -74,7 +74,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 12rem;
+  width: 10rem;
   height: 13rem;
 }
 .day-name {
