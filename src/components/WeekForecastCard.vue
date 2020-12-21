@@ -1,7 +1,6 @@
 <template>
   <div class="week-card">
     <div class="day-box">
-      <div class="day-name">{{ timestamp }}</div>
       <img
         class="weather-icon"
         :src="require(`@/assets/${day.weather.icon}.png`)"
@@ -10,6 +9,7 @@
       <div class="day-temp">
         {{ Math.round(day.temp) + '°c' }}
       </div>
+      <div class="day-name">{{ timestamp }}</div>
     </div>
   </div>
 </template>
@@ -59,8 +59,9 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 6.5rem;
-  width: 6.5rem;
+  /* height: 6.5rem;
+  width: 6.5rem; */
+  opacity: 0.7;
 }
 
 .week-card {
@@ -73,8 +74,8 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 10rem;
-  height: 15rem;
+  width: 12rem;
+  height: 13rem;
 }
 .day-name {
   display: flex;
@@ -84,10 +85,10 @@ export default {
   width: 12rem;
   /* height: 1rem; */
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.2rem;
   /* identical to box height, or 200% */
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: #08153e;
   opacity: 0.6;
 }
@@ -96,8 +97,6 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 12rem;
-  margin-bottom: 1.5rem;
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;

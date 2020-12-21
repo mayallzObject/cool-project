@@ -97,7 +97,7 @@ export default {
   max-width: 52rem;
   margin-bottom: 3rem;
   width: 100%;
-  height: 8.8rem;
+  height: 8.6rem;
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),
@@ -111,7 +111,7 @@ export default {
   display: flex;
   padding: 0.5rem;
   width: 7.5rem;
-  height: 5rem;
+  height: 4.8rem;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
   background: #ffffff;
@@ -139,8 +139,8 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 5rem;
-  width: 5rem;
+  height: 4.7rem;
+  width: 4.7rem;
   margin: 0 1rem 0 2rem;
 }
 .search-box {
@@ -150,7 +150,7 @@ export default {
   display: flex;
   max-width: 34rem;
   width: 100%;
-  height: 5rem;
+  height: 4.8rem;
   background: #ffffff;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 0.5rem;
@@ -167,10 +167,10 @@ export default {
 }
 .search-city {
   margin: 0 2rem 0 2rem;
-
+  padding: 0.3rem;
   max-width: 28rem;
   width: 100%;
-  height: 3rem;
+  height: 2rem;
   border: none;
   font-style: normal;
   font-weight: normal;
