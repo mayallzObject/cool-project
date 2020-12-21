@@ -66,7 +66,7 @@ export default {
 }
 
 .week-card {
-  max-width: 642px;
+  max-width: 55rem;
   display: flex;
   margin-top: 6rem;
 }
