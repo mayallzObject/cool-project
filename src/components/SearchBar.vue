@@ -173,7 +173,7 @@ export default {
   border: none;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.3rem;
   letter-spacing: 0.1rem;
   color: #08153e;
