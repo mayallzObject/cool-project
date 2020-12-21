@@ -114,7 +114,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   /*font-size: 16px;*/
-  line-height: 1.7;
+  line-height: 1.7rem;
   /* color: #777; */
 }
 #app {
@@ -123,7 +123,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
+  min-height: 95vh;
   align-items: center;
   background: linear-gradient(
       0deg,

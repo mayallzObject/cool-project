@@ -95,6 +95,7 @@ export default {
   align-items: center;
   display: flex;
   max-width: 632px;
+  margin-bottom: 5rem;
   width: 100%;
   height: 92px;
   background: linear-gradient(
@@ -103,12 +104,13 @@ export default {
       rgba(255, 255, 255, 0.9)
     ),
     #f8f8f8;
-  box-shadow: 0px 2px 10px rgba(8, 21, 62, 0.15);
+  box-shadow: 0px 0.2rem 1rem rgba(8, 21, 62, 0.2);
   border-radius: 16px;
 }
 .select-box {
   display: flex;
-  width: 95px;
+  padding: 0.5rem;
+  width: 4rem;
   height: 48px;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
@@ -120,7 +122,7 @@ export default {
   /* Positions background arrow image */
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
   background-repeat: no-repeat;
-  background-position: 75px center;
+  background-position: 2rem center;
 }
 
 .select-box:hover {
@@ -133,16 +135,18 @@ export default {
   outline: none;
 }
 .weather-icon {
+  display: flex;
   height: 40px;
   width: 40px;
-  margin-left: 22px;
-  margin-right: 14px;
+  margin-left: 1.5rem;
+  margin-right: 1rem;
 }
 .search-box {
   align-items: center;
   margin-left: 8px;
+  margin-right: 22px;
   display: flex;
-  max-width: 425px;
+  max-width: 28.1rem;
   width: 100%;
   height: 48px;
   background: #ffffff;
@@ -159,15 +163,17 @@ export default {
   color: #08153e;
 }
 .search-city {
-  margin-left: 17px;
-  max-width: 299px;
+  margin-left: 1rem;
+
+  max-width: 35rem;
   width: 100%;
   height: 30px;
   border: none;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  letter-spacing: 0.1rem;
   color: #08153e;
   opacity: 0.5;
 }
@@ -181,9 +187,12 @@ export default {
   outline: none;
 }
 .search {
-  margin-left: 70px;
-  width: 24px;
-  height: 24px;
+  align-items: center;
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
   transition: all 0.2s linear;
 }
 .search:hover {
