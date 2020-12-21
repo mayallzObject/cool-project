@@ -59,9 +59,9 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* height: 6.5rem;
-  width: 6.5rem; */
-  opacity: 0.7;
+  height: 6.5rem;
+  width: 6.5rem;
+  opacity: 0.9;
 }
 
 .week-card {
