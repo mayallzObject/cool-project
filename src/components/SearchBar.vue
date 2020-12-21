@@ -94,7 +94,7 @@ export default {
 .search-bar {
   align-items: center;
   display: flex;
-  max-width: 35rem;
+  max-width: 39rem;
   margin-bottom: 5rem;
   width: 100%;
   height: 92px;

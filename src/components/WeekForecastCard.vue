@@ -61,8 +61,8 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 4rem;
-  width: 4rem;
+  height: 6rem;
+  width: 6rem;
 }
 
 .week-card {
