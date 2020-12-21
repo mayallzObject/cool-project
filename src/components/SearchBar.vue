@@ -141,14 +141,14 @@ export default {
   flex-wrap: wrap;
   height: 5rem;
   width: 5rem;
-  margin: 0 2rem 0 2rem;
+  margin: 0 2rem 0 1.5rem;
 }
 .search-box {
   align-items: center;
   margin-left: 1rem;
   margin-right: 2rem;
   display: flex;
-  max-width: 31rem;
+  max-width: rem;
   width: 100%;
   height: 5rem;
   background: #ffffff;
