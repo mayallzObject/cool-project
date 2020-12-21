@@ -110,7 +110,7 @@ export default {
 .select-box {
   display: flex;
   padding: 0.5rem;
-  width: 5.5rem;
+  width: 6.5rem;
   height: 48px;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
@@ -136,10 +136,11 @@ export default {
 }
 .weather-icon {
   display: flex;
-  height: 40px;
-  width: 40px;
-  margin-left: 1.5rem;
-  margin-right: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 5rem;
+  width: 5rem;
 }
 .search-box {
   align-items: center;
