@@ -148,7 +148,7 @@ export default {
   margin-left: 1rem;
   margin-right: 2rem;
   display: flex;
-  max-width: 30rem;
+  max-width: 31rem;
   width: 100%;
   height: 5rem;
   background: #ffffff;
@@ -156,12 +156,13 @@ export default {
   border-radius: 6px;
 }
 .country-code {
-  width: 17px;
-  height: 30px;
+  align-items: center;
+  height: 1rem;
   font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  letter-spacing: 0.1rem;
   color: #08153e;
 }
 .search-city {
