@@ -97,7 +97,7 @@ export default {
   max-width: 52rem;
   margin-bottom: 3rem;
   width: 100%;
-  height: 9.4rem;
+  height: 8.8rem;
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),
@@ -166,7 +166,7 @@ export default {
   color: #08153e;
 }
 .search-city {
-  margin: 0 1rem 0 1rem;
+  margin: 0 2rem 0 2rem;
 
   max-width: 28rem;
   width: 100%;
@@ -190,7 +190,7 @@ export default {
   outline: none;
 }
 .search {
-  margin: 0 1rem 0 1rem;
+  margin-right: 1.2rem;
   transition: all 0.2s linear;
 }
 .search:hover {
