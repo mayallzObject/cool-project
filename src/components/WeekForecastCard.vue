@@ -65,8 +65,7 @@ export default {
 
 .week-card {
   display: flex;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin: 2.5rem 0 5rem 0;
 }
 .day-box {
   display: flex;
@@ -98,7 +97,7 @@ export default {
   align-items: center;
   flex-wrap: wrap;
   width: 12rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;

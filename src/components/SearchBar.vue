@@ -105,7 +105,7 @@ export default {
     ),
     #f8f8f8;
   box-shadow: 0px 0.2rem 1rem rgba(8, 21, 62, 0.2);
-  border-radius: 16px;
+  border-radius: 2rem;
 }
 .select-box {
   display: flex;
@@ -141,7 +141,7 @@ export default {
   flex-wrap: wrap;
   height: 5rem;
   width: 5rem;
-  margin: 0 1.5rem 0 3rem;
+  margin: 0 1rem 0 2rem;
 }
 .search-box {
   align-items: center;

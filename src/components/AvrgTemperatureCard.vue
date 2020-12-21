@@ -54,7 +54,7 @@ export default {
 
 <style scoped>
 .avrg-card {
-  margin-top: 44px;
+  margin: 5rem 0 2.5rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +63,8 @@ export default {
   height: 171px;
 }
 .header {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  margin-bottom: 1.8rem;
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
