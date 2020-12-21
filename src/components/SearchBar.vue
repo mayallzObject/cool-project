@@ -141,27 +141,27 @@ export default {
   flex-wrap: wrap;
   height: 5rem;
   width: 5rem;
-  margin: 0 2rem 0 1.5rem;
+  margin: 0 3rem 0 1.5rem;
 }
 .search-box {
   align-items: center;
   margin-left: 1rem;
-  margin-right: 2rem;
+  margin-right: 3rem;
   display: flex;
 
   width: 100%;
   height: 5rem;
   background: #ffffff;
   border: 1px solid rgba(8, 21, 62, 0.05);
-  border-radius: 6px;
+  border-radius: 0.5rem;
 }
 .country-code {
   align-items: center;
-
+  width: 2rem;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.4rem;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1rem;
   letter-spacing: 0.1rem;
   color: #08153e;
 }
@@ -194,8 +194,7 @@ export default {
   display: flex;
   height: 4rem;
   width: 4rem;
-  margin-left: 1.5rem;
-  margin-right: 1rem;
+  margin-left: 0 3.5rem 0 1rem;
   transition: all 0.2s linear;
 }
 .search:hover {

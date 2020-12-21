@@ -76,8 +76,8 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 129px;
-  height: 159px;
+  width: 7rem;
+  height: 9rem;
 }
 .day-name {
   display: flex;
@@ -88,7 +88,7 @@ export default {
   /* height: 1rem; */
   font-style: normal;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   /* identical to box height, or 200% */
   letter-spacing: 0.05em;
   color: #08153e;
@@ -114,13 +114,13 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 110px;
+  width: 10rem;
 
   /* font-family: 'Poppins', sans-serif; */
   font-style: normal;
-  font-size: 26px;
+  font-size: 1rem;
   font-weight: 600;
-  line-height: 32px;
+  line-height: 1.4rem;
   color: #ffffff;
   text-shadow: 0px 2px 10px rgba(8, 21, 62, 0.15);
 }
