@@ -97,7 +97,7 @@ export default {
   max-width: 50rem;
   margin-bottom: 5rem;
   width: 100%;
-  height: 6rem;
+  height: 8rem;
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),
@@ -111,7 +111,7 @@ export default {
   display: flex;
   padding: 0.5rem;
   width: 6.5rem;
-  height: 48px;
+  height: 5rem;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
   background: #ffffff;
@@ -145,12 +145,12 @@ export default {
 }
 .search-box {
   align-items: center;
-  margin-left: 8px;
-  margin-right: 22px;
+  margin-left: 1rem;
+  margin-right: 2rem;
   display: flex;
   max-width: 30rem;
   width: 100%;
-  height: 48px;
+  height: 5rem;
   background: #ffffff;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
@@ -169,11 +169,11 @@ export default {
 
   max-width: 35rem;
   width: 100%;
-  height: 30px;
+  height: 3rem;
   border: none;
   font-style: normal;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.3rem;
   letter-spacing: 0.1rem;
   color: #08153e;
@@ -191,10 +191,10 @@ export default {
 .search {
   align-items: center;
   display: flex;
-  height: 40px;
-  width: 40px;
+  height: 4rem;
+  width: 4rem;
   margin-left: 1.5rem;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   transition: all 0.2s linear;
 }
 .search:hover {
