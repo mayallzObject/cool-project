@@ -59,11 +59,11 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 247px;
+  width: 30rem;
   height: 171px;
 }
 .header {
-  height: 24px;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 600;
   line-height: 24px;

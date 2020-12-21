@@ -7,7 +7,6 @@
         alt="dynamic-img"
       />
       <div class="day-name">{{ timestamp }}</div>
-      <div class="day-date">{{ day.datetime }}</div>
       <div class="day-temp">
         {{ Math.round(day.temp) + '°c' }}
       </div>

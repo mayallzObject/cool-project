@@ -94,7 +94,7 @@ export default {
 .search-bar {
   align-items: center;
   display: flex;
-  max-width: 55rem;
+  max-width: 52rem;
   margin-bottom: 3rem;
   width: 100%;
   height: 9.4rem;
@@ -148,7 +148,7 @@ export default {
   margin-left: 1rem;
   margin-right: 2rem;
   display: flex;
-  max-width: 40rem;
+  max-width: 34rem;
   width: 100%;
   height: 5rem;
   background: #ffffff;
@@ -190,7 +190,7 @@ export default {
   outline: none;
 }
 .search {
-  margin: 0 1rem 0 2rem;
+  margin: 0 1rem 0 1rem;
   transition: all 0.2s linear;
 }
 .search:hover {
