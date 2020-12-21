@@ -94,7 +94,7 @@ export default {
 .search-bar {
   align-items: center;
   display: flex;
-  max-width: 39rem;
+  max-width: 45rem;
   margin-bottom: 5rem;
   width: 100%;
   height: 92px;
@@ -110,7 +110,7 @@ export default {
 .select-box {
   display: flex;
   padding: 0.5rem;
-  width: 4.5rem;
+  width: 5.5rem;
   height: 48px;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 6px;
