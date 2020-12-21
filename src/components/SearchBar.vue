@@ -94,10 +94,10 @@ export default {
 .search-bar {
   align-items: center;
   display: flex;
-  max-width: 45rem;
+  max-width: 50rem;
   margin-bottom: 5rem;
   width: 100%;
-  height: 92px;
+  height: 6rem;
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),
@@ -141,13 +141,14 @@ export default {
   flex-wrap: wrap;
   height: 5rem;
   width: 5rem;
+  margin: 0 2rem 0 2rem;
 }
 .search-box {
   align-items: center;
   margin-left: 8px;
   margin-right: 22px;
   display: flex;
-  max-width: 28.1rem;
+  max-width: 30rem;
   width: 100%;
   height: 48px;
   background: #ffffff;
