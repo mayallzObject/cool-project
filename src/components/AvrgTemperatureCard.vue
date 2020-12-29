@@ -9,6 +9,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import moment from 'moment'
 
 export default {
   name: 'AvrgTemperatureCard',
@@ -43,9 +44,9 @@ export default {
         ' ' +
         today.getDate() +
         ' - ' +
-        (today.getDate() + 6) +
-        ' ' +
-        today.getFullYear()
+        moment()
+          .add(6, 'days')
+          .format('LL')
       this.timestamp = date
     }
   }
@@ -63,7 +64,7 @@ export default {
   height: 171px;
 }
 .header {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   margin-bottom: 1.8rem;
   font-style: normal;
   font-weight: 600;

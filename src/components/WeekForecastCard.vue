@@ -1,6 +1,7 @@
 <template>
   <div class="week-card">
     <div class="day-box">
+      <div class="day-name">{{ timestamp }}</div>
       <img
         class="weather-icon"
         :src="require(`@/assets/${day.weather.icon}.png`)"
@@ -9,7 +10,6 @@
       <div class="day-temp">
         {{ Math.round(day.temp) + '°c' }}
       </div>
-      <div class="day-name">{{ timestamp }}</div>
     </div>
   </div>
 </template>
@@ -62,11 +62,12 @@ export default {
   height: 6.5rem;
   width: 6.5rem;
   opacity: 0.9;
+  margin: -3.5rem 0 -3rem 0;
 }
 
 .week-card {
   display: flex;
-  margin: 2.5rem 0 5rem 0;
+  position: relative;
 }
 .day-box {
   display: flex;

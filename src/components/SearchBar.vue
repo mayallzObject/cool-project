@@ -94,26 +94,26 @@ export default {
 .search-bar {
   align-items: center;
   display: flex;
-  max-width: 52rem;
-  margin-bottom: 3rem;
+  max-width: 63rem;
+  margin-bottom: 2.2rem;
   width: 100%;
-  height: 8.6rem;
+  height: 9.2rem;
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 0.9)
     ),
     #f8f8f8;
-  box-shadow: 0px 0.2rem 1rem rgba(8, 21, 62, 0.2);
-  border-radius: 2rem;
+  box-shadow: 0px 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
 }
 .select-box {
   display: flex;
   padding: 0.5rem;
-  width: 7.5rem;
+  width: 5rem;
   height: 4.8rem;
   border: 1px solid rgba(8, 21, 62, 0.05);
-  border-radius: 6px;
+  border-radius: 1rem;
   background: #ffffff;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -141,20 +141,21 @@ export default {
   flex-wrap: wrap;
   height: 4.7rem;
   width: 4.7rem;
-  margin: 0 1rem 0 2rem;
+  margin: 0 1.5rem 0 2rem;
 }
 .search-box {
   align-items: center;
   margin-left: 1rem;
   margin-right: 2rem;
   display: flex;
-  max-width: 34rem;
+  max-width: 42rem;
   width: 100%;
   height: 4.8rem;
   background: #ffffff;
   border: 1px solid rgba(8, 21, 62, 0.05);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
+
 .country-code {
   align-items: center;
   width: 2rem;
