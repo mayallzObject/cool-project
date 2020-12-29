@@ -94,10 +94,8 @@ export default {
 .search-bar {
   align-items: center;
   display: flex;
-  max-width: 63rem;
-  margin-bottom: 2.2rem;
-  width: 100%;
-  height: 9.2rem;
+  width: 52.5rem;
+  height: 9rem;
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),
@@ -105,12 +103,12 @@ export default {
     ),
     #f8f8f8;
   box-shadow: 0px 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
 .select-box {
   display: flex;
   padding: 0.5rem;
-  width: 5rem;
+  width: 6rem;
   height: 4.8rem;
   border: 1px solid rgba(8, 21, 62, 0.05);
   border-radius: 1rem;
@@ -148,7 +146,7 @@ export default {
   margin-left: 1rem;
   margin-right: 2rem;
   display: flex;
-  max-width: 42rem;
+  max-width: 35rem;
   width: 100%;
   height: 4.8rem;
   background: #ffffff;
@@ -171,7 +169,7 @@ export default {
   padding: 0.3rem;
   max-width: 28rem;
   width: 100%;
-  height: 2rem;
+  height: 2.5rem;
   border: none;
   font-style: normal;
   font-weight: normal;
@@ -191,7 +189,7 @@ export default {
   outline: none;
 }
 .search {
-  margin-right: 1.2rem;
+  margin-bottom: 0.5rem;
   transition: all 0.2s linear;
 }
 .search:hover {
