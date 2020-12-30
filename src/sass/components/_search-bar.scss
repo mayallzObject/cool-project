@@ -7,15 +7,12 @@
   max-width: 56.5rem;
   width: 100%;
   height: auto;
-  background: linear-gradient(
-      0deg,
-      rgba($color-white, 0.9),
-      rgba($color-white, 0.9)
-    ),
-    #f8f8f8;
+  background-image: linear-gradient(
+    rgba($color-white, 0.8),
+    rgba($color-primary, 0.9)
+  );
   box-shadow: 0px 1.5rem 4rem rgba($color-black, 0.15);
   border-radius: 1.6rem;
-  background-color: $color-white;
 
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
     only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
@@ -30,6 +27,15 @@
   }
   &__select-box {
     position: relative;
+    font-weight: 700;
+    color: $color-grey-dark;
+    background-image: linear-gradient(
+      to bottom,
+      rgba($color-white, 0.1),
+      rgba($color-white, 0.9)
+    );
+    align-items: center;
+    display: inline-flex;
     border: 1px solid rgba(8, 21, 62, 0.05);
     width: 4.8rem;
     margin: 0 1rem 0 1rem 0;
@@ -45,65 +51,35 @@
     background-position: 2rem center;
 
     &:hover {
-      color: $color-primary;
-      background: linear-gradient(
-          0deg,
-          rgba(255, 255, 255, 0.8),
-          rgba(255, 255, 255, 0.8)
-        ),
-        linear-gradient(
-          119.25deg,
-          #102f7e -11.47%,
-          #0c8dd6 3.95%,
-          #1aa0ec 19.37%,
-          #60c6ff 34.78%,
-          #9bdbff 50.19%,
-          #b4deda 65.61%,
-          #ffd66b 81.02%,
-          #ffc178 96.44%,
-          #fe9255 111.85%
-        );
+      background-color: khaki;
       resize: none;
       outline: none;
     }
 
     &:focus {
-      background-color: transparent;
+      background-color: khaki;
       resize: none;
       outline: none;
     }
   }
   &__search-box {
-    position: relative;
-    align-items: center;
     margin-left: 0.5rem;
-    display: inline-flex;
+    height: 4.8rem;
     max-width: 78%;
     width: 100%;
-    height: 4.8rem;
-    background: #ffffff;
+    position: relative;
+    align-items: center;
+    display: inline-flex;
+    background-image: linear-gradient(
+      to bottom,
+      rgba($color-white, 0.1),
+      rgba($color-white, 0.9)
+    );
     border: 1px solid rgba(8, 21, 62, 0.05);
     border-radius: 0.6rem;
 
     &:hover {
-      color: $color-primary;
-      background: linear-gradient(
-          0deg,
-          rgba(255, 255, 255, 0.8),
-          rgba(255, 255, 255, 0.8)
-        ),
-        linear-gradient(
-          119.25deg,
-          #102f7e -11.47%,
-          #0c8dd6 3.95%,
-          #1aa0ec 19.37%,
-          #60c6ff 34.78%,
-          #9bdbff 50.19%,
-          #b4deda 65.61%,
-          #ffd66b 81.02%,
-          #ffc178 96.44%,
-          #fe9255 111.85%
-        );
+      background-color: khaki;
       resize: none;
       outline: none;
     }

@@ -36,7 +36,7 @@ export default new Vuex.Store({
           if (!response.data.data) {
             const notification = {
               type: 'error',
-              message: 'Incorrect city or country!'
+              message: 'Please check if you have the correct details!'
             }
             dispatch('notification/add', notification, { root: true })
             console.log(notification)
