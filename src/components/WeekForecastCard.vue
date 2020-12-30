@@ -1,14 +1,45 @@
 <template>
-  <div class="week-card">
+  <!-- <div class="1-of-7">
     <div class="day-box">
-      <div class="day-name">{{ timestamp }}</div>
+      <div class="day-box__day">{{ timestamp }}</div>
       <img
-        class="weather-icon"
+        class="day-box__icon"
         :src="require(`@/assets/${day.weather.icon}.png`)"
         alt="dynamic-img"
       />
-      <div class="day-temp">
+      <div class="day-box__temp">
         {{ Math.round(day.temp) + '°c' }}
+      </div>
+    </div>
+  </div> -->
+
+  <div class="col-1-of-7">
+    <div class="card">
+      <div class="card__side card__side--front">
+        <div class="card__icon">
+          <img
+            class="card__icon--size"
+            :src="require(`@/assets/${day.weather.icon}.png`)"
+            alt="dynamic-img"
+          />
+        </div>
+        <h6 class="card__heading">
+          {{ timestamp }}
+        </h6>
+        <div class="card__temperature">
+          {{ Math.round(day.temp) + '°c' }}
+        </div>
+      </div>
+      <div class="card__side card__side--back ">
+        <div class="card__cta">
+          <ul class="card__details">
+            <li>Min: {{ day.min_temp + '°c' }}</li>
+            <li>Max: {{ day.max_temp + '°c' }}</li>
+            <li>Wind: {{ Math.round(day.wind_spd) + ' m/s' }}</li>
+            <li>Clouds: {{ day.clouds + '%' }}</li>
+            <li>Rh: {{ day.rh + '%' }}</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -35,14 +66,18 @@ export default {
   },
   computed: {
     // Country_code
+
     getCountry() {
       return this.$store.getters.getCountry
     },
-
+    getIcons() {
+      return this.$store.getters.getIcons
+    },
     ...mapGetters(['getCountry', 'getIcons'])
   },
   methods: {
     // Get week_days by name
+
     getDays: function() {
       const options = { weekday: 'long', timeZone: 'Europe/Amsterdam' }
       const today = new Date(this.day.datetime)
@@ -52,75 +87,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.weather-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 6.5rem;
-  width: 6.5rem;
-  opacity: 0.9;
-  margin: -3.5rem 0 -3rem 0;
-}
-
-.week-card {
-  display: flex;
-  position: relative;
-}
-.day-box {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 10rem;
-  height: 13rem;
-}
-.day-name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 12rem;
-  /* height: 1rem; */
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.2rem;
-  /* identical to box height, or 200% */
-  letter-spacing: 0.06em;
-  color: #08153e;
-  opacity: 0.6;
-}
-.day-date {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1rem;
-  /* identical to box height, or 200% */
-  letter-spacing: 0.05em;
-  color: #08153e;
-  opacity: 0.6;
-}
-.day-temp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-  margin-bottom: 1rem;
-  /* font-family: 'Poppins', sans-serif; */
-  font-style: normal;
-  font-size: 3rem;
-  font-weight: 600;
-  line-height: 1.4rem;
-  color: #ffffff;
-  text-shadow: 0px 2px 10px rgba(8, 21, 62, 0.15);
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-</style>

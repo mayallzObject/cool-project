@@ -1,8 +1,12 @@
 <template>
   <div class="avrg-card">
-    <div class="header">{{ timestamp }}</div>
-    <div class="avrg-temperature">
-      {{ Math.round(getAvrg) + '°c' }}
+    <div class="avrg-card__text-box">
+      <div class="avrg-card__heading">{{ timestamp }}</div>
+      <span>
+        <div class="avrg-card__temperature">
+          {{ Math.round(getAvrg) + '°c' }}
+        </div>
+      </span>
     </div>
   </div>
 </template>
@@ -29,6 +33,7 @@ export default {
   },
   computed: {
     // Average temperature getter
+
     getAvrg() {
       return this.$store.state.getters.getAvrg
     },
@@ -36,6 +41,7 @@ export default {
   },
   methods: {
     // Get month, dates and year
+
     getPeriod: function() {
       const options = { month: 'long', timeZone: 'Europe/Amsterdam' }
       const today = new Date(this.avrg.datetime)
@@ -46,41 +52,9 @@ export default {
         ' - ' +
         moment()
           .add(6, 'days')
-          .format('LL')
+          .format('ll')
       this.timestamp = date
     }
   }
 }
 </script>
-
-<style scoped>
-.avrg-card {
-  margin: 5rem 0 2.5rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 30rem;
-  height: 171px;
-}
-.header {
-  font-size: 1.4rem;
-  margin-bottom: 1.8rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px;
-  /* identical to box height, or 200% */
-  letter-spacing: 0.06em;
-  color: #08153e;
-  opacity: 0.6;
-}
-.avrg-temperature {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 120px;
-  line-height: 120px;
-  /* identical to box height, or 100% */
-  text-shadow: 0px 2px 10px rgba(8, 21, 62, 0.15);
-  color: #ffffff;
-}
-</style>

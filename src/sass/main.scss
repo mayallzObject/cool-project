@@ -1,0 +1,17 @@
+//* abstract
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+//* BASE
+@import 'base/base';
+
+//* COMPONENTS
+@import 'components/card';
+@import 'components/avrg-card';
+@import 'components/search-bar';
+
+//* LAYOUT
+@import 'layout/grid';
+
+//* PAGES
+@import 'pages/home.scss';

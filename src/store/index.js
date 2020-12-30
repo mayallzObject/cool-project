@@ -2,10 +2,14 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import countryApi from '../services/CountryServices.js'
 import weatherApi from '../services/WeatherServices.js'
+import * as notification from '@/store/modules/notification.js'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  modules: {
+    notification
+  },
   state: {
     countries: [],
     forecast: [],
@@ -23,13 +27,19 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    fetchForecast({ commit }, { city, code }) {
+    fetchForecast({ commit, dispatch }, { city, code }) {
       console.log({ city, code })
       commit('SET_LOAD', true)
       weatherApi
         .getWeather(city, code)
         .then(response => {
           if (!response.data.data) {
+            const notification = {
+              type: 'error',
+              message: 'Incorrect city or country!'
+            }
+            dispatch('notification/add', notification, { root: true })
+            console.log(notification)
             commit('SET_LOAD', false)
           } else {
             commit('SET_LOAD', true)
@@ -79,6 +89,5 @@ export default new Vuex.Store({
         state.forecast.length
       )
     }
-  },
-  modules: {}
+  }
 })

@@ -1,0 +1,123 @@
+.card {
+  // FUNCTIONALITY
+
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 15rem;
+  &:last-child {
+    margin-bottom: 5rem;
+  }
+  &__details {
+    text-align: left;
+    padding: 2rem;
+    font-size: $default-font-size;
+    color: $color-grey-dark;
+    list-style: none;
+  }
+  &__side {
+    height: 15rem;
+    transition: all 0.8s ease;
+    position: absolute;
+
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: transparent;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      background-color: transparent;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__heading {
+    font-size: $default-font-size;
+    font-weight: 300;
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-grey-dark;
+  }
+
+  &__icon {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  &__icon--size {
+    width: 35%;
+    height: 35%;
+  }
+
+  &__temperature {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-white;
+  }
+
+  // FRONT SIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  //@include respond(tab-port) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    height: auto;
+    border-radius: 3px;
+    background-color: transparent;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0);
+      }
+    }
+    &__details {
+      text-align: center;
+      font-size: $default-font-size;
+    }
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__icon--size {
+      width: 25%;
+      height: 25%;
+    }
+    // FRONT SIDE STYLING
+    &__cta {
+      position: relative;
+      top: 0%;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 0 0.5rem 1rem 0.5rem;
+    }
+  }
+}

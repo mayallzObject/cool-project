@@ -2,18 +2,18 @@
   <div class="search-bar">
     <!-- If getIcon is undefined, show default icon -->
     <div v-if="!getIcon || !getIcon.length">
-      <img class="weather-icon" src="../assets/c02d.png" alt="static-img" />
+      <img class="search-bar__icon" src="../assets/c02d.png" alt="static-img" />
     </div>
 
     <!-- Else require the correct icon -->
     <div v-else>
       <img
-        class="weather-icon"
+        class="search-bar__icon"
         :src="require(`@/assets/${getIcon}.png`)"
         alt="dynamic-img"
       />
     </div>
-    <select class="select-box" v-model="code">
+    <select class="search-bar__select-box" v-model="code">
       <option
         class="country-code"
         v-for="country in getCountry"
@@ -24,21 +24,25 @@
     </select>
 
     <!-- City input -->
-    <div class="search-box">
+    <div class="search-bar__search-box">
       <input
-        class="search-city"
+        class="search-bar__search-city"
         type="text"
         placeholder="Please enter your location..."
         v-model="city"
         @keypress="enterSearch"
       />
 
-      <button aria-label="search" class="search" @click.prevent="pressSearch">
+      <button
+        aria-label="search-bar__search"
+        class="search"
+        @click.prevent="pressSearch"
+      >
         <!-- Set loading_icon -->
-        <v-icon v-if="loading != false && city != ''">
+        <v-icon class="search" v-if="loading != false && city != ''">
           fas fa-circle-notch fa-spin
         </v-icon>
-        <v-icon v-else class="union">fas fa-search</v-icon>
+        <v-icon v-else class="search">fas fa-search</v-icon>
       </button>
     </div>
   </div>
@@ -89,119 +93,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.search-bar {
-  align-items: center;
-  display: flex;
-  width: 52.5rem;
-  height: 9rem;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9)
-    ),
-    #f8f8f8;
-  box-shadow: 0px 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  border-radius: 1rem;
-}
-.select-box {
-  display: flex;
-  padding: 0.5rem;
-  width: 6rem;
-  height: 4.8rem;
-  border: 1px solid rgba(8, 21, 62, 0.05);
-  border-radius: 1rem;
-  background: #ffffff;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  /* Positions background arrow image */
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
-  background-repeat: no-repeat;
-  background-position: 3rem center;
-}
-
-.select-box:hover {
-  border: 1px solid #b5c7ff;
-}
-.select-box:focus {
-  border: 2px solid #b5c7ff;
-  background-color: transparent;
-  resize: none;
-  outline: none;
-}
-.weather-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 4.7rem;
-  width: 4.7rem;
-  margin: 0 1.5rem 0 2rem;
-}
-.search-box {
-  align-items: center;
-  margin-left: 1rem;
-  margin-right: 2rem;
-  display: flex;
-  max-width: 35rem;
-  width: 100%;
-  height: 4.8rem;
-  background: #ffffff;
-  border: 1px solid rgba(8, 21, 62, 0.05);
-  border-radius: 1rem;
-}
-
-.country-code {
-  align-items: center;
-  width: 2rem;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1rem;
-  line-height: 1rem;
-  letter-spacing: 0.1rem;
-  color: #08153e;
-}
-.search-city {
-  margin: 0 2rem 0 2rem;
-  padding: 0.3rem;
-  max-width: 28rem;
-  width: 100%;
-  height: 2.5rem;
-  border: none;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.2rem;
-  line-height: 1.3rem;
-  letter-spacing: 0.1rem;
-  color: #08153e;
-  opacity: 0.5;
-}
-.search-city:hover {
-  border: 1px solid #b5c7ff;
-}
-.search-city:focus {
-  border: 2px solid #b5c7ff;
-  background-color: transparent;
-  resize: none;
-  outline: none;
-}
-.search {
-  margin-bottom: 0.5rem;
-  transition: all 0.2s linear;
-}
-.search:hover {
-  opacity: 0.5;
-  background-color: transparent;
-  resize: none;
-  outline: none;
-  transform: scale(1.11);
-}
-.search:focus {
-  background-color: transparent;
-  resize: none;
-  outline: none;
-}
-</style>
