@@ -7,10 +7,7 @@
   max-width: 56.5rem;
   width: 100%;
   height: auto;
-  background-image: linear-gradient(
-    rgba($color-white, 0.8),
-    rgba($color-primary, 0.9)
-  );
+  background-image: linear-gradient($color-white, $color-primary);
   box-shadow: 0px 1.5rem 4rem rgba($color-black, 0.15);
   border-radius: 1.6rem;
 
@@ -51,13 +48,13 @@
     background-position: 2.5rem center;
 
     &:hover {
-      background-color: khaki;
+      background-color: seashell;
       resize: none;
       outline: none;
     }
 
     &:focus {
-      background-color: khaki;
+      background-color: seashell;
       resize: none;
       outline: none;
     }
@@ -79,7 +76,7 @@
     border-radius: 0.6rem;
 
     &:hover {
-      background-color: khaki;
+      background-color: seashell;
       resize: none;
       outline: none;
     }
