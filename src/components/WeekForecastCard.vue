@@ -14,7 +14,31 @@
   </div> -->
 
   <div class="col-1-of-7">
-    <div class="card">
+    <div
+      class="card"
+      id="card"
+      :class="
+        day.temp > -41 && day.temp < -30
+          ? 'minus-fourty'
+          : day.temp >= -30 && day.temp < -20
+          ? 'minus-thirty'
+          : day.temp >= -20 && day.temp < -10
+          ? 'minus-twenty'
+          : day.temp >= -10 && day.temp < 0
+          ? 'minus-ten'
+          : day.temp == 0
+          ? 'zero'
+          : day.temp > 0 && day.temp <= 10
+          ? 'ten'
+          : day.temp > 10 && day.temp <= 20
+          ? 'twenty'
+          : day.temp > 20 && day.temp <= 30
+          ? 'thirty'
+          : day.temp > 30 && day.temp <= 41
+          ? 'fourty'
+          : ''
+      "
+    >
       <div class="card__side card__side--front">
         <div class="card__icon">
           <img

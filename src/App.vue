@@ -24,16 +24,17 @@
         : ''
     "
   >
-    <section class="container">
-      <SearchBar />
-      <NotificationContainer />
-      <AvrgTemperatureCard
-        v-for="avrg in forecast.slice(0, 1)"
-        :key="avrg.id"
-        :avrg="avrg"
-      />
+    <section class="section-search">
+      <div class="container">
+        <SearchBar />
+        <NotificationContainer />
+      </div>
     </section>
-
+    <AvrgTemperatureCard
+      v-for="avrg in forecast.slice(0, 1)"
+      :key="avrg.id"
+      :avrg="avrg"
+    />
     <section class="section-week">
       <div class="row">
         <WeekForecastCard

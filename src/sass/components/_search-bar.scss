@@ -1,13 +1,18 @@
 .search-bar {
+  // position: relative;
+
   padding: 1.5rem 1rem;
-  display: inline-flex;
-  margin-top: 11rem;
+  display: flex;
+
   align-items: center;
   justify-content: center;
-  max-width: 56.5rem;
+  max-width: 57.5rem;
   width: 100%;
   height: auto;
-  background-image: linear-gradient($color-white, $color-primary);
+  background-image: linear-gradient(
+    rgba($color-white, 0.7),
+    rgba($color-white, 0.5)
+  );
   box-shadow: 0px 1.5rem 4rem rgba($color-black, 0.15);
   border-radius: 1.6rem;
 
@@ -34,7 +39,7 @@
     align-items: center;
     display: inline-flex;
     border: 1px solid rgba(8, 21, 62, 0.05);
-    width: 4.8rem;
+    width: 5.4rem;
     margin: 0 1rem 0 1rem 0;
     height: 4.8rem;
     border-radius: 0.6rem;
@@ -93,7 +98,7 @@
     font-size: 1.3rem;
     width: 75%;
     height: 2.8rem;
-    margin: 0 6rem 0 1rem;
+    margin: 0 5rem 0 1rem;
     &:hover {
       color: purple;
       background-color: transparent;
@@ -111,6 +116,7 @@
 }
 
 .search {
+  padding: 0.5rem;
   position: relative;
   transition: all 0.2s linear;
 
