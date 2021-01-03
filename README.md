@@ -1,10 +1,6 @@
-# :rocket: Computer Science Quiz Front :satellite:
+# :satellite: Weather Forecast App
 
-[Link](https://simple-weather-forecast.netlify.app)
- 
-![ezgif com-video-to-gif (13)](https://user-images.githubusercontent.com/66206483/94065912-0834ab00-fdec-11ea-909d-abc7ba45d04e.gif)
-![ezgif com-video-to-gif (15)](https://user-images.githubusercontent.com/66206483/94067843-b6d9eb00-fdee-11ea-8d55-4ddd19dfd931.gif)
-   
+[Weather Forcast App](https://simple-weather-forecast.netlify.app)
    
 ## :pushpin: Table of content
 
@@ -24,9 +20,8 @@
   next 7 days. The front of the week-day card displays the day name, avrg. temperature and weather icon, the back shows details (wind-speed, min/max temp, 
   humidity, and cloud coverage. 
   The backgound is binded to the avarege temperature and changes accordingly. 
-    
-
-
+   
+   
 ## Technologies
 
 - JavaScript
@@ -40,6 +35,7 @@
  
 - clone 
 - npm install 
+ 
  
 ## Dependencies 
  
