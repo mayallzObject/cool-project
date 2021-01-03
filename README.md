@@ -20,7 +20,7 @@ The weather forecast app is my second Vue 2 application. The user can select the
 
 - JavaScript
 - Vue 2, Vuex, Vuitify
-- Sass- block element model architecture. 
+- Sass- block element modifier
 - Axios
 
 
