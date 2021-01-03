@@ -27,7 +27,7 @@
     
 
 
-## Technologies.
+## Technologies
 
 - JavaScript
 - Vue 2, Vuex, Vuitify
